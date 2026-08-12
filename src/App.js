@@ -505,24 +505,43 @@ const styles = `
    DATA
 ───────────────────────────────────────────── */
 const skills = [
+   {
+    Icon: Code2,
+    name: "Software Development",
+    desc: "Build scalable, user-focused web and mobile applications using modern technologies and development practices.",
+    tags: ["React.js", "JavaScript", "Next.js"],
+  },
+   {
+    Icon: Code2,
+    name: "Web Application Development",
+    desc: "Build responsive, performant web applications with modern frontend frameworks, API integrations and reusable components.",
+    tags: ["React.js", "JavaScript", "HTML / CSS", "Next.js"],
+  },
+  {
+    Icon:Smartphone,
+    name: "Mobile App Development",
+    desc: "Build cross-platform mobile applications with React Native, delivering smooth and consistent experiences across iOS and Android.",
+    tags: ["React Native", "Expo", "JavaScript", "TypeScript"],
+  },
+  {
+    Icon:Globe,
+    name: "AI-Assisted Development",
+    desc: "Use modern AI tools and workflows to accelerate development, improve debugging and problem-solving, and build software more efficiently while maintaining engineering quality.",
+    tags: ["AI-Assisted Development", "Prompt Engineering", "AI Developer Tools"],
+  },
   {
     Icon: Globe,
     name: "WordPress Development",
-    desc: "Custom themes, plugins, and full-site editing with WooCommerce and advanced CPTs. High-performance, SEO-ready WordPress sites built from scratch.",
-    tags: ["Custom Themes", "WooCommerce", "Elementor", "ACF", "PHP"],
+    desc: "Build and maintain professional WordPress websites, including custom themes, plugins and WooCommerce solutions.",
+    tags: ["Custom Themes", "WooCommerce", "Elementor", "PHP"],
   },
-  {
-    Icon: Code2,
-    name: "Web Development",
-    desc: "Modern, responsive websites and web apps built with React, clean HTML/CSS, and efficient backend integrations — for speed, usability, and beauty.",
-    tags: ["React", "JavaScript", "HTML / CSS", "Node.js", "MySQL"],
+ {
+    Icon: Globe,
+    name: "Tech Training & Mentorship",
+    desc: "I teach and mentor learners through practical web development, helping them build strong foundations, understand modern development tools, solve real-world problems, and gain the confidence to build functional digital products.",
+    tags: ["WEB DEVELOPMENT", "HTML/CSS", "JavaScript", "React", "Mentorship"],
   },
-  {
-    Icon: Smartphone,
-    name: "Mobile App Development",
-    desc: "Cross-platform mobile apps using React Native. Smooth, native-feeling experiences for iOS and Android from a single, clean codebase.",
-    tags: ["React Native", "Expo", "Firebase", "iOS", "Android"],
-  },
+  
 ];
 
 const projects = [
@@ -581,6 +600,15 @@ const projects = [
     alt: "Food delivery app",
     link:'https://pythonscave.com/'
   },
+  {
+    type: "Mobile App", TypeIcon: Smartphone,
+    name: "Maisomwellness Beauty",
+    desc: "A cross-platform habit tracker with streaks, push notifications, and detailed analytics dashboards.",
+    stack: ["React Native", "Expo", "Firebase"],
+    img:three,
+    alt: "Mobile habit tracking app",
+    link:'https://maisomwellness.netlify.app/'
+  }
 ];
 
 const socials = [
@@ -679,13 +707,13 @@ export default function Portfolio() {
           <div className="hero-left">
             <div className="hero-tag">
               <span className="hero-tag-dot" />
-              Available for projects
+              SOFTWARE DEVELOPER • AVAILABLE FOR OPPORTUNITIES
             </div>
             <h1 className="hero-title">
-              Building <em>digital</em><br />experiences<br />that matter.
+              Building <em>scalable</em><br />digital<br />products.
             </h1>
             <p className="hero-sub">
-              WordPress developer, web designer &amp; mobile app creator. I turn ideas into fast, beautiful, functional products.
+              Software Developer specializing in React.js, Next.js & React Native. I build responsive web applications and cross-platform mobile experiences with a focus on performance, usability and clean architecture.
             </p>
             <div className="hero-cta">
               <button className="btn-primary" onClick={() => scrollTo("contact")}>
