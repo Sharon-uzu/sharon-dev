@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import {
   Globe, Smartphone, Layout, Github, Linkedin, Twitter, Instagram,
   MessageCircle, Mail, MapPin, Clock, ArrowRight, ExternalLink,
-  User, Code2, Menu, X,
+  User, Code2, Menu, X, FileText, Download,
   Facebook
 } from "lucide-react";
 import me from './images/one.jpeg'
@@ -12,6 +12,10 @@ import four from './images/four.png'
 import five from './images/five.png'
 import six from './images/six.png'
 import seven from './images/seven.png'
+import qreke from './images/qreke.png'
+import zipha from './images/zipha.png'
+import resume from './documents/Sharon V. Uzu Resume (1).pdf'
+
 
 
 
@@ -123,7 +127,7 @@ const styles = `
 
   .hero-left {
     display: flex; flex-direction: column; justify-content: center;
-    padding: 5rem 3rem 5rem 6rem; position: relative; z-index: 1;
+    padding: 3rem 3rem 5rem 4rem; position: relative; z-index: 1;
   }
   .hero-tag {
     display: inline-flex; align-items: center; gap: 0.5rem;
@@ -177,6 +181,46 @@ const styles = `
     white-space: nowrap;
   }
   .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+  .hero-resume {
+    display: grid; grid-template-columns: 44px minmax(0, 1fr) auto;
+    align-items: center; gap: 0.85rem; width: min(100%, 430px);
+    padding: 0.9rem; background: var(--cream);
+    border: 1px solid rgba(13,13,13,0.12);
+    box-shadow: 5px 5px 0 rgba(13,13,13,0.06);
+    animation: fadeUp 0.7s 0.35s ease both;
+  }
+  .hero-resume-icon {
+    width: 44px; height: 48px; display: flex; align-items: center;
+    justify-content: center; background: var(--paper); color: var(--accent);
+    border: 1px solid rgba(13,13,13,0.08);
+  }
+  .hero-resume-copy { min-width: 0; }
+  .hero-resume-label {
+    display: block; color: var(--muted); font-size: 0.62rem;
+    font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+    margin-bottom: 0.2rem;
+  }
+  .hero-resume-name {
+    display: block; overflow: hidden; color: var(--ink);
+    font-family: 'Playfair Display', serif; font-size: 1rem;
+    font-weight: 700; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .hero-resume-detail { display: block; color: var(--muted); font-size: 0.7rem; }
+  .hero-resume-actions { display: flex; align-items: center; gap: 0.45rem; }
+  .resume-view, .resume-download {
+    height: 38px; display: inline-flex; align-items: center;
+    justify-content: center; text-decoration: none; transition: 0.2s ease;
+  }
+  .resume-view {
+    gap: 0.4rem; padding: 0 0.75rem; background: var(--ink);
+    color: var(--paper); font-size: 0.75rem; font-weight: 500; white-space: nowrap;
+  }
+  .resume-view:hover { background: var(--accent); }
+  .resume-download {
+    width: 38px; color: var(--ink); border: 1px solid rgba(13,13,13,0.2);
+  }
+  .resume-download:hover { color: var(--accent); border-color: var(--accent); }
 
   /* Hero right — photo panel */
   .hero-right {
@@ -468,6 +512,10 @@ const styles = `
     .hero-sub   { font-size: 0.9rem; }
     .hero-cta   { flex-direction: column; align-items: stretch; }
     .hero-cta button { justify-content: center; }
+    .hero-resume { grid-template-columns: 40px minmax(0, 1fr); }
+    .hero-resume-icon { width: 40px; height: 44px; }
+    .hero-resume-actions { grid-column: 1 / -1; }
+    .resume-view { flex: 1; }
     .hero-right { min-height: 60vw; }
     .hero-photo-container { width: 58%; max-width: 200px; box-shadow: -8px 8px 0 var(--accent); }
     .floater-1 { top: 8%; left: 2%; }
@@ -545,6 +593,26 @@ const skills = [
 ];
 
 const projects = [
+  {
+    featured: true,
+    type: "React Web Application", TypeIcon: Globe,
+    name: "ZiphaTech",
+    desc: "Build communities that pay, stay and grows",
+    stack: ["ReacjJs", "NodeJS"],
+    img: zipha,
+    alt: "Coomunity Management Software",
+    link:'https://ziphatech.com/'
+  },
+  {
+    featured: true,
+    type: "React Web Application", TypeIcon: Globe,
+    name: "Qreke",
+    desc: "Property management software for hotels, shortlets and apartments",
+    stack: ["ReacjJs", "NodeJS"],
+    img: qreke,
+    alt: "Property Management Software",
+    link:'https://qreke.com/'
+  },
   {
     featured: true,
     type: "WordPress & WooCommerce", TypeIcon: Globe,
@@ -710,7 +778,7 @@ export default function Portfolio() {
               SOFTWARE DEVELOPER • AVAILABLE FOR OPPORTUNITIES
             </div>
             <h1 className="hero-title">
-              Building <em>scalable</em><br />digital<br />products.
+              Building <em>scalable</em><br />digital products.
             </h1>
             <p className="hero-sub">
               Software Developer specializing in React.js, Next.js & React Native. I build responsive web applications and cross-platform mobile experiences with a focus on performance, usability and clean architecture.
@@ -723,6 +791,22 @@ export default function Portfolio() {
                 View Work
               </button>
             </div>
+            <div className="hero-resume">
+              <div className="hero-resume-icon" aria-hidden="true"><FileText size={23} strokeWidth={1.6} /></div>
+              <div className="hero-resume-copy">
+                <span className="hero-resume-label">Career profile · PDF</span>
+                <span className="hero-resume-name">Sharon V. Uzu</span>
+                <span className="hero-resume-detail">Experience, skills & selected work</span>
+              </div>
+              <div className="hero-resume-actions">
+                <a className="resume-view" href={resume} target="_blank" rel="noreferrer">
+                  View resume <ExternalLink size={14} />
+                </a>
+                <a className="resume-download" href={resume} download="Sharon-Uzu-Resume.pdf" aria-label="Download resume" title="Download resume">
+                  <Download size={16} />
+                </a>
+              </div>
+            </div>
             {/* <div className="hero-socials">
               {socials.map(({ name, href, Icon }) => (
                 <a key={name} href={href} target="_blank" rel="noreferrer" className="hero-social-btn" aria-label={name} title={name}>
@@ -734,7 +818,7 @@ export default function Portfolio() {
 
           <div className="hero-right">
             <div className="hero-floater floater-1">
-              <span className="floater-num">15+</span>Projects Done
+              <span className="floater-num">8+</span>Projects Done
             </div>
 
             <div className="hero-photo-container">
