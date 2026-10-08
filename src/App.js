@@ -1,9 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import {
-  Globe, Smartphone, Layout, Github, Linkedin, Twitter, Instagram,
+  Globe, Smartphone, Layout,
   MessageCircle, Mail, MapPin, Clock, ArrowRight, ExternalLink,
   User, Code2, Menu, X, FileText, Download,
-  Facebook
 } from "lucide-react";
 import me from './images/one.jpeg'
 import two from './images/two.png'
