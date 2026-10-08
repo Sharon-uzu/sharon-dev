@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import {
-  Globe, Smartphone, Layout,
+  Globe, Smartphone, Layout, Github, Linkedin, Facebook, Instagram,
   MessageCircle, Mail, MapPin, Clock, ArrowRight, ExternalLink,
   User, Code2, Menu, X, FileText, Download,
 } from "lucide-react";
